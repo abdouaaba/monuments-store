@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,400;0,900;1,300;1,800&display=swap");
+* {
+  font-family: Poppins, Montserrat, sans-serif;
+}
+
+body {
+  background: #1F1E2C;
+  font-family: Poppins, Montserrat, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  background: #6472f9;
+  background: radial-gradient(circle, #6472f9 0%, #353c51 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em 0em;
+}
+
+.container_sign-in {
+  background: #353c51;
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-width: 450px;
+  margin: 3em 1em;
+  margin: 1em auto;
+  padding: 1em 0em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container_sign-in .left {
+  display: none;
+}
+
+.container_sign-in .right {
+  margin: 0em;
+  width: 100%;
+}
+
+.container_sign-in .right h4 {
+  font-size: 1.8em;
+  color: #6472f9;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.container_sign-in .right p {
+  color: white;
+  text-align: center;
+}
+
+.container_sign-in .right .info {
+  padding: 1em;
+}
+
+.container_sign-in .right .set_info {
+  margin: 1em;
+}
+
+.container_sign-in .right .set_info input {
+  display: block;
+  margin: auto;
+  border: 0;
+  border-bottom: 1px solid #555;
+  background: transparent;
+  width: 100%;
+  padding: 8px 0 5px 1em;
+  font-size: 16px;
+  color: #fff;
+}
+
+.container_sign-in .right .set_info input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #6472f9;
+}
+
+.container_sign-in .right .set_info input::-webkit-input-placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.container_sign-in .right .set_info input:-ms-input-placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.container_sign-in .right .set_info input::-ms-input-placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.container_sign-in .right .set_info input::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.container_sign-in .right label {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1, 1em;
+  color: #6472f9;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.container_sign-in .right .show_hide_pswd {
+  text-align: center;
+  place-content: center;
+  color: #6472f9;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin: 0em;
+  margin-top: 1em;
+}
+
+.container_sign-in .right #sh_p1,
+.container_sign-in .right #hi_p1 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.container_sign-in .right #sh_p1:hover,
+.container_sign-in .right #hi_p1:hover {
+  text-decoration: underline;
+}
+
+.container_sign-in .right #hi_p1 {
+  display: none;
+}
+
+.container_sign-in .right #button1 {
+  color: #fff;
+  background-color: #5c69e6;
+  font-size: 1em;
+  outline: none;
+  border: 0;
+  color: #fff;
+  padding: 0.2em 1em;
+  text-transform: uppercase;
+  margin-top: 1em;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.container_sign-in .right .login {
+  margin-top: 1em;
+  text-align: center;
+  place-content: center;
+}
+
+.container_sign-in .right .set_info input:focus ~ label,
+.container_sign-in .right .set_info input:valid ~ label {
+  top: -12px;
+  font-size: 12px;
+}
+
+.container_sign-in .create-acc {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: white;
+}
+
+.container_sign-in .create-acc span {
+  color: #6472f9;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.container_sign-in .create-acc a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 750px) {
+  .container_sign-in {
+    margin: auto;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 600px;
+    max-width: 700px;
+    padding: 0em;
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(30%, #ebefff), color-stop(25%, rgba(0, 0, 0, 0)));
+    background-image: linear-gradient(to right, #ebefff 30%, rgba(0, 0, 0, 0) 25%);
+  }
+  .container_sign-in .left {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    height: 100%;
+  }
+  .container_sign-in .left h4 {
+    font-size: 1.5em;
+    text-align: center;
+    color: #6472f9;
+    margin-bottom: 0;
+  }
+  .container_sign-in .left img {
+    text-align: center;
+    width: 80%;
+    height: 390px;
+  }
+  .container_sign-in .right {
+    width: 70%;
+    height: 100%;
+  }
+}
+/*# sourceMappingURL=loginstyle.css.map */
