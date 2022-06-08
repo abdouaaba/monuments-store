@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+    include("connection.php");
+    include("functions.php");
+
+    $user_data= check_login($con);
+    check_admin($con, $user_data);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,20 +29,21 @@
 
     <main>
         <div class="box-add">
-            <form action="">
-                <div class="image"><img src="img/add.png" alt="" width="30px" style="margin-top: 2.1em;"></div>
+            <form action="add.php" method="POST" enctype="multipart/form-data">
+                <div id="picture"><img id="plus-icon" src="img/add.png" alt="" width="30px" style="margin-top: 2.1em;"></div>
+                <input type="file" id="mediaFile" name="picture" required/>
+                
+                <div id="name-form" class="input-container">
+                    <input id="user" class="input-field" type="text" placeholder="Name" name="name" required>
+                </div>  
 
-                <label for="name">
-                    <input id="user" type="text" placeholder="Name" name="name" required>
-                </label>  
+                <div id="email-form" class="input-container">
+                    <input id="mail" class="input-field" type="email" placeholder="E-mail" name="email" required>
+                </div>
 
-                <label for="email">
-                    <input id="mail" type="email" placeholder="E-mail" name="email" required>
-                </label>
-
-                <label for="password">
-                    <input id="pass" type="password" placeholder="Password" name="password" required>
-                </label>
+                <div id="password-form" class="input-container">
+                    <input id="pass" class="input-field" type="password" placeholder="Password" name="password" required>
+                </div>
                 <button type="submit">Add</button>
             </form>
         </div>
@@ -54,6 +65,65 @@
         </div>
         
         
-    </main>    
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+    <script>
+        $(function() {
+            $('#picture').addClass('dragging').removeClass('dragging');
+        });
+
+        $('#picture').on('dragover', function() {
+            $('#picture').addClass('dragging')
+        }).on('dragleave', function() {
+            $('#picture').removeClass('dragging')
+        }).on('drop', function(e) {
+        $('#picture').removeClass('dragging hasImage');
+
+        if (e.originalEvent) {
+            var file = e.originalEvent.dataTransfer.files[0];
+            console.log(file);
+
+            var reader = new FileReader();
+
+            //attach event handlers here...
+
+            reader.readAsDataURL(file);
+            reader.onload = function(e) {
+                console.log(reader.result);
+                $('#picture').css('background-image', 'url(' + reader.result + ')').addClass('hasImage');
+                $('#plus-icon').css('display', 'none');
+            }
+
+        }
+        })
+        $('#picture').on('click', function(e) {
+            console.log('clicked')
+            $('#mediaFile').click();
+        });
+        window.addEventListener("dragover", function(e) {
+            e = e || event;
+            e.preventDefault();
+        }, false);
+        window.addEventListener("drop", function(e) {
+            e = e || event;
+            e.preventDefault();
+        }, false);
+        $('#mediaFile').change(function(e) {
+
+            var input = e.target;
+            if (input.files && input.files[0]) {
+            var file = input.files[0];
+
+            var reader = new FileReader();
+
+            reader.readAsDataURL(file);
+            reader.onload = function(e) {
+                console.log(reader.result);
+                $('#picture').css('background-image', 'url(' + reader.result + ')');
+                $('#plus-icon').css('display', 'none');
+            }
+            }
+        })
+    </script>
 </body>
 </html>
