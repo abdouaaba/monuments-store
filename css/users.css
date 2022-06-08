@@ -42,6 +42,9 @@ nav ul li {
     display: block;
 
 } 
+.icon:hover{
+    transform: scale(1.2);
+}
 
 main {
     padding-left: 90px;
