@@ -3,11 +3,11 @@
 function check_login($con)
 {
 
-	if(isset($_SESSION['User_ID']))
+	if(isset($_SESSION['id']))
 	{
 
-		$id = $_SESSION['User_ID'];
-		$query = "select * from user_ where User_ID = '$id' limit 1";
+		$id = $_SESSION['id'];
+		$query = "select * from admins where id = '$id' limit 1";
 
 		$result = mysqli_query($con,$query);
 		if($result && mysqli_num_rows($result) > 0)
@@ -15,11 +15,32 @@ function check_login($con)
 
 			$user_data = mysqli_fetch_assoc($result);
 			return $user_data;
+		} else {
+			$query = "select * from users where id = '$id' limit 1";
+			$result = mysqli_query($con,$query);
+			
+			if($result && mysqli_num_rows($result) > 0)
+			{
+
+				$user_data = mysqli_fetch_assoc($result);
+				return $user_data;
+			}
 		}
+	} else {
+		header("Location: login.php");
 	}
+}
 
-	//redirect to login
 
+function check_admin($con, $user_data) {
+	$id = $user_data['id'];
+
+	$query = "select * from admins where id = '$id' limit 1";
+	$result = mysqli_query($con,$query);
+
+	if( !($result && mysqli_num_rows($result) > 0) ) {
+		header("Location: store.php");
+	}
 }
 
 function random_num($length)
