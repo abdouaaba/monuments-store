@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightgray;
+}
+
+nav ul {
+    color: white;
+    width: 80px;
+    background-color: #7049bd;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    margin-top: 2em;
+}
+
+.icon-store, .icon-users, .icon-info, .icon-logout {
+    display: none;
+}
+
+#store:hover + .icon-store{
+    display: block;
+} 
+#users:hover + .icon-users{
+    display: block;
+
+} 
+#info:hover + .icon-info{
+    display: block;
+
+} 
+#logout:hover + .icon-logout{
+    display: block;
+
+} 
+.icon:hover{
+    transform: scale(1.2);
+}
+
+main {
+    padding-left: 90px;
+}
+.head{
+    margin-left:100px;
+}
+
+.box-add {
+    display: inline-block;
+    color: black;
+    width: 300px;
+    height: 300px;
+    background-color: #7049bd;
+    text-align: center;
+    margin-left: 1em;
+    margin-top: 1em;
+    border-radius: 0.5em;
+    box-shadow: 0px 0px 15px 0px #7049bd;
+    position: relative;
+}
+.box-add .image{
+    
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+
+
+
+
+button {
+    padding: 0.5em 2em;
+    background-color: #7049bd;
+    color: white;
+    border: none;
+    border-radius: 0.5em;
+}
+
+.box-moments {
+    display: inline-block;
+    font-size: large;
+    color: black;
+    width: 300px;
+    height: 300px;
+    min-width: 300px;
+    text-align: center;
+    background: url("../img/nn.jpg");
+    background-position: center;
+    background-position: -10px -40px;
+    margin: 1em 0 0 1em;
+    border-radius: 0.5em;
+    box-shadow: 0px 0px 15px 0px #7049bd;
+    position: relative;
+}
+.box-moments .info1 {
+    position: absolute;
+}
+input {
+    font-size: large;
+    display: block;
+    margin: 1.5em auto;
+    border: none;
+    border-bottom: 1px solid #7049bd;
+    text-align: center;
+}
