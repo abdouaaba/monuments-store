@@ -100,7 +100,7 @@ button {
     position: relative;
 }
 
-.box-monum .infos {
+.infos {
     opacity: 0;
 }
 
@@ -144,13 +144,17 @@ input {
 
 .image {
     position: absolute;
-    top: 11em;
+    display: none;
+    top: 16em;
     left: 0.75em;
+    cursor: t;
 }
 
 .prix-input, .copies-input {
     background: none;
+    color: white;
     text-align: center;
+    text-shadow: 2px 2px black;
     outline: none;
     border: none;
     width: 180px;
@@ -165,6 +169,7 @@ input {
     border: none;
     outline: none;
     cursor: context-menu;
+    text-shadow: 2px 2px black;
 }
 
 .titre-input::placeholder , .location-input::placeholder, .prix-input::placeholder, .copies-input::placeholder {
@@ -207,12 +212,15 @@ input {
     left: 0.75em;
 }
 
-.image-input-add {
+.image-input-add, .image-input {
     font-size: small;
+    color: white;
+    background: rgb(175, 175, 175);
 }
 
 .prix-input-add, .copies-input-add {
-    background: lightgray;
+    background: rgb(175, 175, 175);
+    color: white;
     text-align: center;
     outline: none;
     border: none;
@@ -222,7 +230,8 @@ input {
 
 .titre-input-add , .location-input-add, .description-input-add {
     resize: none;
-    background: lightgray;
+    background: rgb(175, 175, 175);
+    color: white;
     border: none;
     outline: none;
 }
@@ -235,8 +244,12 @@ input {
 .location-input-add, .location-input {
     width: 150px;
     font-size: small;
+    font-style: italic;
 }
 
+#create-form input:focus, #create-form textarea:focus {
+    background: #7049bd;
+}
 
 #create-form {
     display: none;
@@ -254,4 +267,67 @@ input {
     font-size: large;
     font-weight: bolder;
     cursor: pointer;
+}
+
+#create-button img {
+    position: absolute;
+    top: 0.6em;
+    right: 0.53em;
+}
+
+.edit-button {
+    position: absolute;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: #FEA500;
+    border-radius: 50%;
+    top: -1em;
+    left: 17.5em;
+    padding: 0;
+}
+
+.edit-button img {
+    position: absolute;
+    top: 0.53em;
+    right: 0.55em;
+    
+}
+
+.delete-button {
+    position: absolute;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: #FD0000;
+    border-radius: 50%;
+    top: -1em;
+    left: 20.6em;
+    padding: 0;
+}
+
+.delete-button img {
+    position: absolute;
+    top: 0.53em;
+    right: 0.55em;
+    
+}
+
+.confirm-button {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: #7049bd;
+    border-radius: 50%;
+    top: -1.35em;
+    left: 27.8em;
+    padding: 0;
+}
+
+.confirm-button img {
+    position: absolute;
+    top: 0.8em;
+    right: 0.75em;
 }
