@@ -14,7 +14,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usres</title>
+    <title>Users</title>
     <link rel="stylesheet" href="css/users.css">
 </head>
 <body>
@@ -32,7 +32,7 @@ session_start();
             <form action="add.php" method="POST" enctype="multipart/form-data">
                 <div id="picture"><img id="plus-icon" src="img/add.png" alt="" width="30px" style="margin-top: 2.1em;"></div>
                 <input type="file" id="mediaFile" name="picture" required/>
-                
+
                 <div id="name-form" class="input-container">
                     <input id="user" class="input-field" type="text" placeholder="Name" name="name" required>
                 </div>  
@@ -44,25 +44,29 @@ session_start();
                 <div id="password-form" class="input-container">
                     <input id="pass" class="input-field" type="password" placeholder="Password" name="password" required>
                 </div>
-                <button type="submit">Add</button>
+                <button type="submit" name="add">Add</button>
             </form>
         </div>
+        <?php
+        
+        $records = mysqli_query($con,"select id, fullname, email, picture, nb_contributions, admin_id from users where admin_id = '".$user_data['id']."';");
+
+        while($data = mysqli_fetch_array($records))
+        {
+        ?>
         <div class="box-user">
-            <div class="image"><img src="img/bg.jpg" alt="" width="50px"></div>
+            <div class="image"><img src=<?php echo "uploads/".encrypt($data['id']).'/'.$data['picture']; ?> alt="" width="50px"></div>
             <div class="infos">
-                <span class="name">Zouhair Elamrani</span>
-                <span class="email">zozoamrani@gmail.com</span>
-                <span class="nb-contr">0 contributions</span>
+                <span class="name"><?php echo $data['fullname']; ?></span>
+                <span class="email"><?php echo $data['email']; ?></span>
+                <span class="nb-contr"><?php echo $data['nb_contributions']; ?> contributions</span>
             </div>
         </div>
-        <div class="box-user">
-            <div class="image"><img src="img/bg.jpg" alt="" width="50px"></div>
-            <div class="infos">
-                <span class="name">Zouhair Elamrani</span>
-                <span class="email">zozoamrani@gmail.com</span>
-                <span class="nb-contr">0 contributions</span>
-            </div>
-        </div>
+
+        <?php
+        }
+        ?>
+        
         
         
     </main>
