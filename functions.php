@@ -52,10 +52,9 @@ function random_num($length)
 		$length = 5;
 	}
 
-	$len = rand(4,$length);
+	$len = rand(6,$length - 1);
 
 	for ($i=0; $i < $len; $i++) { 
-		# code...
 
 		$text .= rand(0,9);
 	}
