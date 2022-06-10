@@ -1,3 +1,4 @@
+<!--
 <?php
 session_start();
 
@@ -7,6 +8,7 @@ session_start();
     $user_data= check_login($con);
 
 ?>
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,54 +37,131 @@ session_start();
     </div>
     </nav>
     <main>
-        <div class="box-add">
-            <form action="">
-                <div class="image"><img src="img/add.png" width="30px" ></div>
-            </form>
-</div>
-        <div class="box-moments">
-             <form action="">
-                 <div class="info1">
-                 <spam>Moments one</spam>
-                 <spam>Nador</spam>
-                 <spam>jkhgfdfghijokojiugyfdtfyuiopu<br>kytdfhjkjhy9ob<br>kuytydrpl,mkjbhvguipklmkbjvhfg<br> </spam>
-                </div>            
+        <div id="box-add">
+                <div id="add-image"><img src="img/add.png" width="30px" ></div>
+                
+                <form action="" id="create-form">
+                    <div class="titre-add">
+                        <input class="titre-input-add" type="text" placeholder="Titre" name="titre" required>
+                    </div>
+                    <div class="location-add">
+                        <input class="location-input-add" type="text" placeholder="Location" name="location" required>
+                    </div>
+                    
+                    <div class="description-add">
+                        <textarea class="description-input-add" name="description" rows="13" cols="48" required>qsjkdfhsdqjfhqsdkjfhqsdlkjfhqslkdqskjdlqksjdlkqsjdlkqsjdlkqsjdlkqsjdlkqsjdlkqjsd</textarea>
+                    </div>
+                    
+                    <div class="image-add">
+                        <input class="image-input-add" type="file"  name="image" required>
+                    </div>
+                    
+                    <div class="prix-add">
+                        <input class="prix-input-add" type="text" placeholder="Price" name="prix" required>
+                    </div>
+                    <div class="copies-add">
+                        <input class="copies-input-add" type="text" placeholder="Copies" name="copies" required>
+                    </div>
+                    <button type="submit" name="create" id="create-button">✓</button>
+                </form>
+        </div>
+        <div class="box-monum" style="background-image: url(img/bg.jpg); background-position: center; background-repeat: no-repeat; background-size: auto 400px;">
+            <form action="" class="infos">
+                <div class="titre">
+                    <input class="titre-input" type="text" placeholder="Titre" name="titre" readonly>
+                </div>
+                <div class="location">
+                    <input class="location-input" type="text" placeholder="Location" name="location" readonly>
+                </div>
+                
+                <div class="description">
+                    <textarea class="description-input" name="description" rows="15" cols="48" readonly>qsjkdfhsdqjfhqsdkjfhqsdlkjfh</textarea>
+                </div>
+                <!--
+                <div class="image">
+                    <input class="image-input" type="file"  name="image" readonly>
+                </div>
+                -->
+                <div class="prix">
+                    <input class="prix-input" type="text" placeholder="Price" name="prix" readonly>
+                </div>
+                <div class="copies">
+                    <input class="copies-input" type="text" placeholder="Copies" name="copies" readonly>
+                </div>
                 </form>
             
         </div>
-        <div class="box-moments">
-             <form action="">
-                 <div class="info1">
-                 <label for="titre">
-                    <input id="titre" type="text" placeholder="Titre" name="#" required>
-                </label><br>
-
-                <label for="location">
-                    <input id="location" type="text" placeholder="Location" name="#" required>
-                </label><br>
-                <label for="desc">
-                    <input id="desc" type="text" placeholder="description" name="#" required>
-                </label>         
+        <div class="box-monum" style="background-image: url(img/bg.jpg); background-position: center; background-repeat: no-repeat; background-size: auto 400px;">
+            <form action="" class="infos">
+                <div class="titre">
+                    <input class="titre-input" type="text" placeholder="Titre" name="titre" readonly>
+                </div>
+                <div class="location">
+                    <input class="location-input" type="text" placeholder="Location" name="location" readonly>
+                </div>
+                
+                <div class="description">
+                    <textarea class="description-input" name="description" rows="15" cols="48" readonly>qsjkdfhsdqjfhqsdkjfhqsdlkjfh</textarea>
+                </div>
+                <!--
+                <div class="image">
+                    <input class="image-input" type="file"  name="image" readonly>
+                </div>
+                -->
+                <div class="prix">
+                    <input class="prix-input" type="text" placeholder="Price" name="prix" readonly>
+                </div>
+                <div class="copies">
+                    <input class="copies-input" type="text" placeholder="Copies" name="copies" readonly>
+                </div>
                 </form>
             
         </div>
-        </div>
 
-        <div class="box-moments">
-             <form action="">
-                 <div class="info1">
-                 <spam>Moments one</spam>
-                 <spam>Nador</spam>
-                 <spam>jkhgfdfghijokojiugyfdtfyuiopu<br>kytdfhjkjhy9ob<br>kuytydrpl,mkjbhvguipklmkbjvhfg<br> </spam>
-                </div>            
+        <div class="box-monum" style="background-image: url(img/bg.jpg); background-position: center; background-repeat: no-repeat; background-size: auto 400px;">
+            <form action="" class="infos">
+                <div class="titre">
+                    <input class="titre-input" type="text" placeholder="Titre" name="titre" readonly>
+                </div>
+                <div class="location">
+                    <input class="location-input" type="text" placeholder="Location" name="location" readonly>
+                </div>
+                
+                <div class="description">
+                    <textarea class="description-input" name="description" rows="15" cols="48" readonly>qsjkdfhsdqjfhqsdkjfhqsdlkjfh</textarea>
+                </div>
+                
+                <div class="prix">
+                    <input class="prix-input" type="text" placeholder="Price" name="prix" readonly>
+                </div>
+                <div class="copies">
+                    <input class="copies-input" type="text" placeholder="Copies" name="copies" readonly>
+                </div>
                 </form>
             
         </div>
-        
-      
+    
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+    <script>
+        var addButton = document.getElementById('add-image');
 
-        
-        
-    </main> 
+        addButton.addEventListener('click', () => {
+            var form = document.getElementById('create-form');
+            var addBox = document.getElementById('box-add');
+            form.style.display = "block";
+            addBox.style.backgroundColor = "gray";
+            addButton.style.display = "none";
+        })
+    </script>
+    <script>
+        $(".box-monum").hover(function(){
+        $(this).find(".infos").stop(true,true).css({"left":"20px"}).animate({"top":"-10px", "opacity": "1"},200);
+        },function(){
+        $(this).find(".infos").animate({"top":"-20px", "opacity": "0"},200, function() {
+            $(this).css({"left":"-9999px", "top":"0"});
+        });
+        });
+    </script>
 </body>
 </html>
