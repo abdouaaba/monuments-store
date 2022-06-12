@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 * {
-    font-family: Poppins;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
     margin: 0;
     padding: 0;
     text-align: center;
+    
 }
 
 .bg {
@@ -23,20 +24,23 @@ body {
 .container {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 83%;
     transform: translate(-50%,-50%);
     width: 350px;
     height: fit-content;
     margin: 0 auto;
     padding: 1em 0;
     background-color: white;
-    border-top: 5px solid #7049bd;
+    border-top: 7px solid #7049bd;
     border-radius: 5px;
 }
 
 .container2 {
-    text-align: left;
+    text-align: centre;
     padding: 0 2em;
+}
+.set_info{
+    text-align: left;
 }
 
 
@@ -77,4 +81,10 @@ button {
     border: none;
     border-radius: 5px;
 }
-
+#sh_p1{
+    text-align: center;
+}
+button:hover{
+    background-color: #5508f0;
+    color: black;
+}
