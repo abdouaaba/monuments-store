@@ -51,6 +51,8 @@ main {
 }
 .head{
     margin-left:100px;
+    color: #7049bd;
+    font-weight: bold;
 }
 
 #box-add {
