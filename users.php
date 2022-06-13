@@ -18,6 +18,13 @@ session_start();
     <link rel="stylesheet" href="css/users.css">
 </head>
 <body>
+    <header>
+        <div class="head">
+        <h2>Bienvenue, Zouhir el amraani</h2>
+        <h3>Users</h3>
+        </div>
+    </header>
+    
     <nav class="side-nav">
         <ul>
             <li id="store" class="icon"><a href="store.php"><img src="img/store.png" alt="" width="30px"></a></li><div class="icon-store">Store</div>
