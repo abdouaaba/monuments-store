@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 * {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Poppins;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 .container {
     position: absolute;
     top: 50%;
-    left: 83%;
+    left: 50%;
     transform: translate(-50%,-50%);
     width: 350px;
     height: fit-content;
@@ -39,6 +39,11 @@ body {
     text-align: centre;
     padding: 0 2em;
 }
+
+.container p {
+    color: #5508f0;
+}
+
 .set_info{
     text-align: left;
 }
@@ -46,6 +51,8 @@ body {
 
 label {
     text-align: left;
+    cursor: text;
+    color: #5508f0;
 }
 
 .title {
@@ -80,10 +87,20 @@ button {
     font-size: 0.9em;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
-#sh_p1{
+
+.show_hide_pswd {
     text-align: center;
 }
+
+#sh_p1, #hi_p1 {
+    font-size: small;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
 button:hover{
     background-color: #5508f0;
     color: black;
