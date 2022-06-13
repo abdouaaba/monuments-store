@@ -26,22 +26,29 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 350px;
+    width: 500px;
     height: fit-content;
     margin: 0 auto;
-    padding: 1em 0;
-    background-color: white;
+    padding: 2.5em 0 1.5em;
     border-top: 7px solid #7049bd;
     border-radius: 5px;
-}
 
-.container2 {
-    text-align: centre;
-    padding: 0 2em;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .container p {
-    color: #5508f0;
+    color: #7049bd;
+    font-size: large;
+    font-weight: bold;
+}
+
+.container2 {
+    text-align: center;
+    padding: 0 3em;
 }
 
 .set_info{
@@ -50,9 +57,12 @@ body {
 
 
 label {
+    margin-left: 0.75em;
     text-align: left;
+    font-size: 15px;
+    font-weight: 600;
     cursor: text;
-    color: #5508f0;
+    color: #7049bd;
 }
 
 .title {
@@ -64,11 +74,12 @@ label {
 input {
     display: block;
     width: 90%;
-    height: 35px;
+    height: 40px;
     font-weight: 600;
     font-size: 0.8em;
     margin: 1.5em auto;
     padding: 0 1em;
+    background-color: lightgr;
     border: grey 1px solid;
     border-radius: 5px;
 }
@@ -79,14 +90,15 @@ input:focus {
 }
 
 button {
-    width: 89%;
-    height: 35px;
+    width: 50%;
+    height: 40px;
     background: #7049bd;
     color: white;
     font-weight: 600;
     font-size: 0.9em;
     border: none;
     border-radius: 5px;
+    margin: 0.5em 0;
     cursor: pointer;
 }
 
