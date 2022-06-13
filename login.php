@@ -30,6 +30,7 @@ session_start();
 					{
 
 						$_SESSION['id'] = $user_data['id'];
+						$_SESSION['type'] = "admin";
 						header("Location: users.php");
 						die;
 					}
@@ -52,6 +53,7 @@ session_start();
                             {
     
                                 $_SESSION['id'] = $user_data['id'];
+				$_SESSION['type'] = "user";
                                 header("Location: store.php");
                                 die;
                             }
