@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
 * {
+    font-family: Poppins;
     margin: 0;
     padding: 0;
 }
@@ -58,6 +61,7 @@ main {
     background-color: white;
     text-align: center;
     margin-left: 1em;
+    padding: 1em 0 1.25em;
     border-radius: 0.5em;
     box-shadow: 0px 0px 15px 0px #7049bd;
 }
@@ -90,8 +94,8 @@ input:focus {
 }
 
 .input-field {
-    background: url(/img/text-input.png) no-repeat scroll 195px -1px;
-    background-size: 20px;
+    background: url(../img/text-input.png) no-repeat scroll 210px 8px;
+    background-size: 15px;
 }
 
 #mediaFile {
@@ -118,6 +122,7 @@ button {
     background-color: white;
     text-align: center;
     margin: 1em 0 0 1em;
+    padding: 1em 0;
     border-radius: 0.5em;
     box-shadow: 0px 0px 15px 0px #7049bd;
 }
