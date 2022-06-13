@@ -1,4 +1,4 @@
-<?php 
+<!--<?php 
 
 session_start();
 
@@ -28,15 +28,16 @@ session_start();
 					
 					if($user_data['password'] === $password)
 					{
-
+                        
 						$_SESSION['id'] = $user_data['id'];
-						$_SESSION['type'] = "admin";
+                        $_SESSION['type'] = "admin";
 						header("Location: users.php");
 						die;
 					}
                     else
                     {
-                        echo "wrong username or password!";
+                        $_SESSION['error'] = "login";
+                        session_destroy();
                     }
 				} else {
                     $query = "select * from users where email = '$user_mail' limit 1";
@@ -53,14 +54,18 @@ session_start();
                             {
     
                                 $_SESSION['id'] = $user_data['id'];
-				$_SESSION['type'] = "user";
+                                $_SESSION['type'] = "user";
                                 header("Location: store.php");
                                 die;
                             }
                             else
                             {
-                                echo "wrong username or password!";
+                                $_SESSION['error'] = "login";
+                                session_destroy();
                             }
+                        } else {
+                            $_SESSION['error'] = "login";
+                            session_destroy();
                         }
                     }
                 }
@@ -70,6 +75,7 @@ session_start();
 	}
 
 ?>
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,20 +89,29 @@ session_start();
 </head>
 
 <body>
-        <img class="bg" src="img/back2.jpg" alt="bg">
+        <img class="bg" src="img/bg.jpg" alt="bg">
         <div class="container">
-                <p>Monument Catalog Login</p>
+
+                <img src="img/login.png" alt="" width="45px">
+                
+                <p>Monuments Catalog Login</p>
                 <div class="container2">
                 <form method="post">
+
                         <div class="set_info"><label class="label"><span class="detail">E-mail</span></label><input
-                                name="email" type="email" class="inputcls" placeholder="example.mail@gmail.com"></div>
+                                name="email" type="email" class="inputcls" placeholder="example.mail@gmail.com" required></div>
                         <div class="set_info"><label class="label"><span class="detail">Password</span></label><input
-                                name="password" type="password" class="inputcls" id="mypswrd1" placeholder="Only you know it.">
+                                name="password" type="password" class="inputcls" id="mypswrd1" placeholder="Only you know it." required>
                             <div class="show_hide_pswd">
                                 <span id="sh_p1" onclick="myFunction3()">Show password</span>
                                 <span id="hi_p1" onclick="myFunction4()" style="display: none;">Hide password</span>
                             </div>
                         </div>
+                        <?php
+                        if (isset($_SESSION['error']) == "login") {
+                            echo '<font color="#FF0000" align="center">wrong email or password!</font>';
+                        }
+                        ?>
                         <button type="submit">Log in</button>
                 </form>
                 </div>
