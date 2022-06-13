@@ -21,9 +21,9 @@ session_start();
 <body>
     <header>
         <div class="head">
-        <l1>Bienvenue, Zouhir el amraani<br></l1>
-        <l2>Store </l2>
-    </div>
+        <h2>Bienvenue, Zouhir el amraani<br></h2>
+        <h3>Store </h3>
+        </div>
     </header>
     <nav class="side-nav">
         <div class="zoom">
