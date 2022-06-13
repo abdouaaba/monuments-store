@@ -10,47 +10,43 @@ body {
     background-color: lightgray;
 }
 
-nav ul {
-    color: white;
-    width: 80px;
+a {
+    text-decoration: none;
+}
+
+.side-nav {
     background-color: #7049bd;
+    text-align: center;
+    width: 80px;
     height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
+    padding-top: 2em;
+}
+
+nav ul {
+    color: white;
+    padding-top: 3em;
     list-style-type: none;
     text-align: center;
 }
 
 nav ul li {
-    margin-top: 2em;
+    margin-top: 1em;
+    cursor: context-menu;
 }
 
-.icon-store, .icon-users, .icon-info, .icon-logout {
-    display: none;
-}
-
-#store:hover + .icon-store{
-    display: block;
-} 
-#users:hover + .icon-users{
-    display: block;
-
-} 
-#info:hover + .icon-info{
-    display: block;
-
-} 
-#logout:hover + .icon-logout{
-    display: block;
-
-} 
-.icon:hover{
-    transform: scale(1.2);
+.menu-text {
+    font-size: small;
+    color: white;
+    opacity: 0;
+    margin-top: -0.5em;
 }
 
 main {
     padding-left: 90px;
+    margin-top: 2em;
 }
 
 .box-add {
@@ -75,10 +71,6 @@ main {
     margin: 0.5em auto 0;
     border-radius: 50%;
     cursor: pointer;
-}
-
-.dragging {
-    background-image: none!important;
 }
 
 input {
