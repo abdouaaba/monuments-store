@@ -31,14 +31,10 @@ function check_login($con)
 	}
 }
 
-
 function check_admin($con, $user_data) {
-	$id = $user_data['id'];
+	$type = $_SESSION['type'];
 
-	$query = "select * from admins where id = '$id' limit 1";
-	$result = mysqli_query($con,$query);
-
-	if( !($result && mysqli_num_rows($result) > 0) ) {
+	if ($type == "user") {
 		header("Location: store.php");
 	}
 }
@@ -77,65 +73,11 @@ function randomNum() {
     $alphabet = '123456789';
     $pass = array(); //remember to declare $pass as an array
     $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
-    for ($i = 0; $i < 8; $i++) {
+    for ($i = 0; $i < 10; $i++) {
         $n = rand(0, $alphaLength);
         $pass[] = $alphabet[$n];
     }
     return implode($pass); //turn the array into a string
-}
-
-function check_code($code, $con){
-	$query = "SELECT * FROM classes WHERE code = '$code'";
-	$result = mysqli_query($con, $query);
-	if ($result) {
-	if (mysqli_num_rows($result) > 0) {
-		return True;
-	} else {
-		return False;
-	}
-	} else {
-		echo 'Error: '.mysqli_error();
-	}
-}
-
-function isteacher($code, $id, $con) {
-	$query = "SELECT teacher_id FROM classes WHERE code = '$code'";
-	$result = mysqli_query($con, $query);
-	$data = mysqli_fetch_array($result);
-
-	if($id == $data['teacher_id']){
-		return True;
-	} else {
-		return False;
-	}
-}
-
-function isparticipant($id, $code, $con) {
-	$query = "SELECT * FROM relations WHERE class_code = '$code' and user_id = '$id';";
-	$result = mysqli_query($con, $query);
-	if ($result) {
-		if (mysqli_num_rows($result) > 0) {
-			return True;
-		} else {
-			header("Location: classes.php"); 
-		}
-		} else {
-			echo 'Error: '.mysqli_error();
-		}
-}
-
-function isclass($code, $con) {
-	$query = "SELECT * FROM classes WHERE code = '$code';";
-	$result = mysqli_query($con, $query);
-	if ($result) {
-		if (mysqli_num_rows($result) > 0) {
-			return True;
-		} else {
-			echo 'Class not found';
-		}
-		} else {
-			echo 'Error: '.mysqli_error();
-	}
 }
 
 function encrypt($string) {
@@ -149,7 +91,7 @@ function encrypt($string) {
 	$encryption_iv = '6057280297683440';
 	
 	// Store the encryption key
-	$encryption_key = "almadElearning13524";
+	$encryption_key = "monumentsStore13524";
 	
 	// Use openssl_encrypt() function to encrypt the data
 	$encryption = openssl_encrypt($string, $ciphering,
@@ -169,7 +111,7 @@ function decrypt($string) {
 	$decryption_iv = '6057280297683440';
 	
 	// Store the decryption key
-	$decryption_key = "almadElearning13524";
+	$decryption_key = "monumentsStore13524";
 	
 	// Use openssl_decrypt() function to decrypt the data
 	$decryption= openssl_decrypt($string, $ciphering, 
