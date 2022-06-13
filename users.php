@@ -24,13 +24,13 @@ session_start();
         <h3>Users</h3>
         </div>
     </header>
-    
+
     <nav class="side-nav">
         <ul>
-            <li id="store" class="icon"><a href="store.php"><img src="img/store.png" alt="" width="30px"></a></li><div class="icon-store">Store</div>
-            <li id="users" class="icon"><a href="users.php"><img src="img/users.png" alt="" width="30px"></a></li><div class="icon-users">Users</div>
-            <li id="info" class="icon"><a href="#"><img src="img/info.png" alt="" width="30px"></a></li><div class="icon-info">Logs</div>
-            <li id="logout" class="icon"><a href="logout.php"><img src="img/logout.png" alt="" width="30px"></a></li><div class="icon-logout">Logout</div>
+            <li id="store" class="icon"><a href="store.php"><img src="img/store.png" alt="" width="30px"><div class="menu-text">Store</div></a></li>
+            <li id="users" class="icon"><a href="users.php"><img src="img/users.png" alt="" width="30px"><div class="menu-text">Users</div></a></li>
+            <li id="info" class="icon"><a href="#"><img src="img/info.png" alt="" width="30px"><div class="menu-text">Logs</div></a></li>
+            <li id="logout" class="icon"><a href="logout.php"><img src="img/logout.png" alt="" width="30px"><div class="menu-text">Logout</div></a></li>
         </ul>
     </nav>
 
@@ -79,34 +79,7 @@ session_start();
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
     <script>
-        $(function() {
-            $('#picture').addClass('dragging').removeClass('dragging');
-        });
-
-        $('#picture').on('dragover', function() {
-            $('#picture').addClass('dragging')
-        }).on('dragleave', function() {
-            $('#picture').removeClass('dragging')
-        }).on('drop', function(e) {
-        $('#picture').removeClass('dragging hasImage');
-
-        if (e.originalEvent) {
-            var file = e.originalEvent.dataTransfer.files[0];
-            console.log(file);
-
-            var reader = new FileReader();
-
-            //attach event handlers here...
-
-            reader.readAsDataURL(file);
-            reader.onload = function(e) {
-                console.log(reader.result);
-                $('#picture').css('background-image', 'url(' + reader.result + ')').addClass('hasImage');
-                $('#plus-icon').css('display', 'none');
-            }
-
-        }
-        })
+        
         $('#picture').on('click', function(e) {
             console.log('clicked')
             $('#mediaFile').click();
@@ -135,6 +108,12 @@ session_start();
             }
             }
         })
+
+        $(".icon").hover(function(){
+            $(this).find(".menu-text").animate({"opacity": "1"},200);
+        },function(){
+            $(this).find(".menu-text").animate({"opacity": "0"},100);
+        });
     </script>
 </body>
 </html>
