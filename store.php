@@ -5,7 +5,6 @@ session_start();
     include("functions.php");
 
     $user_data= check_login($con);
-    echo $user_data['id'];
 
 ?>
 
@@ -18,13 +17,14 @@ session_start();
     <title>Stores</title>
     <link rel="stylesheet" href="css/store.css">
 </head>
-<header>
-    <div class="head">
-    <l1>Bienvenue, Zouhir el amraani<br></l1>
-    <l2>Store </l2>
-</div>
-</header>
+
 <body>
+    <header>
+        <div class="head">
+        <l1>Bienvenue, Zouhir el amraani<br></l1>
+        <l2>Store </l2>
+    </div>
+    </header>
     <nav class="side-nav">
         <div class="zoom">
 
@@ -37,6 +37,9 @@ session_start();
     </div>
     </nav>
     <main>
+        <?php
+        if($_SESSION['type'] == "user") {
+        ?>
         <div id="box-add">
                 <div id="add-image"><img src="img/add.png" width="50px" ></div>
                 
@@ -65,11 +68,17 @@ session_start();
                     <button type="submit" name="create" id="create-button"><img src="img/submit.png" alt="" width="20px"></button>
                 </form>
         </div>
+        <?php
+        }
+        ?>
 
         <?php
+        if($_SESSION['type'] == "user") {
+            $records = mysqli_query($con,"select id_monument, title, place, description, image, image_path, price, copies from monuments where user_id = '".$user_data['id']."';");
+        } else {
+            $records = mysqli_query($con,"select id_monument, title, place, description, image, image_path, price, copies from monuments where user_id in (select id from users where admin_id = '".$user_data['id']."');");
+        }
         
-        $records = mysqli_query($con,"select id_monument, title, place, description, image, image_path, price, copies from monuments where user_id = '".$user_data['id']."';");
-
         while($data = mysqli_fetch_array($records))
         {
         ?>
