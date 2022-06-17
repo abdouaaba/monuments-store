@@ -79,19 +79,17 @@ session_start();
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
     <script>
+
+        $(".icon").hover(function(){
+            $(this).find(".menu-text").animate({"opacity": "1"},200);
+        },function(){
+            $(this).find(".menu-text").animate({"opacity": "0"},100);
+        });
         
         $('#picture').on('click', function(e) {
-            console.log('clicked')
             $('#mediaFile').click();
         });
-        window.addEventListener("dragover", function(e) {
-            e = e || event;
-            e.preventDefault();
-        }, false);
-        window.addEventListener("drop", function(e) {
-            e = e || event;
-            e.preventDefault();
-        }, false);
+        
         $('#mediaFile').change(function(e) {
 
             var input = e.target;
@@ -102,18 +100,11 @@ session_start();
 
             reader.readAsDataURL(file);
             reader.onload = function(e) {
-                console.log(reader.result);
                 $('#picture').css('background-image', 'url(' + reader.result + ')');
                 $('#plus-icon').css('display', 'none');
             }
             }
         })
-
-        $(".icon").hover(function(){
-            $(this).find(".menu-text").animate({"opacity": "1"},200);
-        },function(){
-            $(this).find(".menu-text").animate({"opacity": "0"},100);
-        });
     </script>
 </body>
 </html>
