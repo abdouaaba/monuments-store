@@ -21,20 +21,17 @@ session_start();
 <body>
     <header>
         <div class="head">
-        <h2>Bienvenue, Zouhir el amraani<br></h2>
-        <h3>Store </h3>
-        </div>
+        <l1>Bienvenue, Zouhir el amraani<br></l1>
+        <l2>Store </l2>
+    </div>
     </header>
     <nav class="side-nav">
-        <div class="zoom">
-
         <ul>
-            <li id="store" class="icon"><a href="store.php"><img src="img/store.png" alt="" width="30px"></a></li><div class="icon-store">Store</div>
-            <li id="users" class="icon"><a href="users.php"><img src="img/users.png" alt="" width="30px"></a></li><div class="icon-users">Users</div>
-            <li id="info" class="icon"><a href="#"><img src="img/info.png" alt="" width="30px"></a></li><div class="icon-info">Logs</div>
-            <li id="logout" class="icon"><a href="logout.php"><img src="img/logout.png" alt="" width="30px"></a></li><div class="icon-logout">Logout</div>
+            <li id="store" class="icon"><a href="store.php"><img src="img/store.png" alt="" width="30px"><div class="menu-text">Store</div></a></li>
+            <li id="users" class="icon"><a href="users.php"><img src="img/users.png" alt="" width="30px"><div class="menu-text">Users</div></a></li>
+            <li id="info" class="icon"><a href="#"><img src="img/info.png" alt="" width="30px"><div class="menu-text">Logs</div></a></li>
+            <li id="logout" class="icon"><a href="logout.php"><img src="img/logout.png" alt="" width="30px"><div class="menu-text">Logout</div></a></li>
         </ul>
-    </div>
     </nav>
     <main>
         <?php
@@ -81,15 +78,18 @@ session_start();
         
         while($data = mysqli_fetch_array($records))
         {
+            $title = $data['title'];
+            $location = $data['place'];
+        
         ?>
 
         <div id=<?php echo $data['id_monument']; ?> class="box-monum" style="background-image: url(<?php echo $data['image_path']; ?>); background-position: center; background-repeat: no-repeat; background-size: auto 400px;">
             <form action=<?php echo "update.php?did=".$data['id_monument']; ?> method="POST" class="infos" enctype="multipart/form-data">
                 <div class="titre">
-                    <input class="titre-input input-field" type="text" value=<?php echo $data['title']; ?> name="title" readonly>
+                    <input class="titre-input input-field" type="text" value=<?php echo "'$title'"; ?> name="title" readonly>
                 </div>
                 <div class="location">
-                    <input class="location-input input-field" type="text" value=<?php echo $data['place']; ?> name="location" readonly>
+                    <input class="location-input input-field" type="text" value=<?php echo "'$location'"; ?> name="location" readonly>
                 </div>
                 
                 <div class="description">
@@ -133,6 +133,12 @@ session_start();
         })
     </script>
     <script>
+
+        $(".icon").hover(function(){
+            $(this).find(".menu-text").animate({"opacity": "1"},200);
+        },function(){
+            $(this).find(".menu-text").animate({"opacity": "0"},100);
+        });
 
         //hover effect
         $(".box-monum").hover(function(){
