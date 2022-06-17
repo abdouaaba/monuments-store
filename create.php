@@ -13,7 +13,7 @@ $user_data= check_login($con);
 
 if (isset($_POST['create'])) {
 
-    $randMonumID = random_num(10);
+    $randMonumID = random_num(9);
     $id = $user_data['id'];
     $encUserID = encrypt($id);
     $title = $_REQUEST['title'];
@@ -31,7 +31,7 @@ if (isset($_POST['create'])) {
     $folder = "uploads/".$encUserID.'/'.'contributions/'.$filename;
 
 
-    $sql = "INSERT INTO monuments (id_monument, title, place, description, image, image_path, price, copies, user_id) VALUES ('$randMonumID', '$title', '$location', '$description', '$filename', '$folder', '$price', '$nbCopies','$id')";
+    $sql = "INSERT INTO monuments (id_monument, title, place, description, image, image_path, price, copies, user_id) VALUES ('".$randMonumID."', '".$title."', '".$location."', '".$description."', '".$filename."', '".$folder."', '".$price."', '".$nbCopies."','".$id."')";
     mysqli_query($con, "UPDATE users SET nb_contributions = nb_contributions + 1 WHERE id = $id;");
 
     if(!mysqli_query($con, $sql)) {
